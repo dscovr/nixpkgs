@@ -258,6 +258,11 @@ stdenv.mkDerivation (finalAttrs: {
 
   mesonCheckFlags = [ "--verbose" ];
 
+  preCheck = ''
+    # Fontconfig error: No writable cache directories
+    export HOME=$(mktemp -d)
+  '';
+
   doInstallCheck =
     (lib.elem "webp" selectedPlugins) && !stdenv.hostPlatform.isStatic && stdenv.hostPlatform.isElf;
   installCheckPhase = ''
