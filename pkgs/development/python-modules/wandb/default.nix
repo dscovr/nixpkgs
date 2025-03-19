@@ -7,6 +7,7 @@
   ## wandb-core
   buildGoModule,
   git,
+  go,
   versionCheckHook,
 
   ## gpu-stats
