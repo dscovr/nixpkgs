@@ -130,6 +130,7 @@ let
 
     nativeBuildInputs = [
       git
+      go
     ];
 
     nativeInstallCheckInputs = [
